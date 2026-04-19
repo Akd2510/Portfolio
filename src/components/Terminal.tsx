@@ -184,14 +184,15 @@ const Terminal: React.FC = () => {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
               <div className="text-terminal-amber font-bold mb-1">
-                Digital Portrait Gen
+                Automated Digital Portrait Pipeline
               </div>
               <div>
-                Automated artistic filter application using OpenCV and MediaPipe
-                to transform raw video feeds into stylized digital portraits.
+                Engineered a CV pipeline using Delaunay triangulation and
+                Poisson blending for realistic face-template mapping,
+                implementing face-gating to eliminate artifacts.
               </div>
               <div className="mt-1 opacity-70 italic text-sm">
-                Stack: Python, OpenCV, MediaPipe.
+                Stack: Python, OpenCV, MediaPipe, NumPy.
               </div>
             </div>
           );
