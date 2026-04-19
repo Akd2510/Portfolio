@@ -144,12 +144,22 @@ const Terminal: React.FC = () => {
         );
 
       case "1":
-      case "cat":
-        const target = mainCmd === "1" ? "motion-workspace.md" : args[1];
+      case "2":
+      case "3":
+      case "4":
+      case "cat": {
+        const target =
+          mainCmd === "1" ||
+          mainCmd === "2" ||
+          mainCmd === "3" ||
+          mainCmd === "4"
+            ? mainCmd
+            : args[1];
+
         if (
           target === "motion-workspace.md" ||
           target === "motion-workspace" ||
-          mainCmd === "1"
+          target === "1"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
@@ -167,9 +177,28 @@ const Terminal: React.FC = () => {
             </div>
           );
         } else if (
+          target === "digital-portrait.py" ||
+          target === "digital-portrait" ||
+          target === "2"
+        ) {
+          return (
+            <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
+              <div className="text-terminal-amber font-bold mb-1">
+                Digital Portrait Gen
+              </div>
+              <div>
+                Automated artistic filter application using OpenCV and MediaPipe
+                to transform raw video feeds into stylized digital portraits.
+              </div>
+              <div className="mt-1 opacity-70 italic text-sm">
+                Stack: Python, OpenCV, MediaPipe.
+              </div>
+            </div>
+          );
+        } else if (
           target === "landslide-mapping.py" ||
           target === "landslide-mapping" ||
-          mainCmd === "3"
+          target === "3"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
@@ -187,28 +216,9 @@ const Terminal: React.FC = () => {
             </div>
           );
         } else if (
-          mainCmd === "2" ||
-          target === "digital-portrait" ||
-          target === "digital-portrait.py"
-        ) {
-          return (
-            <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
-              <div className="text-terminal-amber font-bold mb-1">
-                Digital Portrait Gen
-              </div>
-              <div>
-                Automated artistic filter application using OpenCV and MediaPipe
-                to transform raw video feeds into stylized digital portraits.
-              </div>
-              <div className="mt-1 opacity-70 italic text-sm">
-                Stack: Python, OpenCV, MediaPipe.
-              </div>
-            </div>
-          );
-        } else if (
-          mainCmd === "4" ||
+          target === "onboard.java" ||
           target === "onboard" ||
-          target === "onboard.java"
+          target === "4"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
@@ -235,13 +245,7 @@ const Terminal: React.FC = () => {
             <div className="text-red-500 mt-2">File not found: {target}</div>
           );
         }
-
-      case "2":
-      case "3":
-      case "4":
-        // These are handled by the 'cat' logic above due to fallthrough or shared handling
-        // But for clarity in this switch, we can just return the same function call or logic
-        return processCommand(`cat ${mainCmd}`);
+      }
 
       case "sudo":
         if (args[1] === "get-resume") {
