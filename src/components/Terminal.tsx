@@ -224,14 +224,15 @@ const Terminal: React.FC = () => {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
               <div className="text-terminal-amber font-bold mb-1">
-                Onboard System
+                OnBoard: Advertising Marketplace
               </div>
               <div>
-                Designed a modular Java-based backend for employee onboarding
-                with secure SQL database integration.
+                Automated the advertising booking lifecycle from negotiation to
+                contract signing, integrating secure payments to improve
+                transaction efficiency.
               </div>
               <div className="mt-1 opacity-70 italic text-sm">
-                Stack: Java, SQL, Spring Boot.
+                Stack: Java, SQL, Full Stack, DBMS.
               </div>
             </div>
           );
