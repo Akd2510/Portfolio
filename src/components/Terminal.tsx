@@ -383,7 +383,7 @@ const ResumeDownloader: React.FC = () => {
   return (
     <div className="mt-2">
       <a
-        href="RESUME.pdf"
+        href="/Portfolio/RESUME.pdf"
         download="Akshat_Resume.pdf"
         className="text-terminal-cyan underline hover:text-terminal-green transition-colors font-bold"
       >
