@@ -49,11 +49,11 @@ const Terminal: React.FC = () => {
                 system summary
               </div>
               <div>
-                <span className="text-terminal-cyan">ls</span> - List projects
+                <span className="text-terminal-cyan">ls</span> - List experience & projects
               </div>
               <div>
                 <span className="text-terminal-cyan">cat &lt;file&gt;</span> -
-                View project details
+                View file details
               </div>
               <div>
                 <span className="text-terminal-cyan">sudo get-resume</span> -
@@ -73,9 +73,9 @@ const Terminal: React.FC = () => {
             <span className="text-terminal-amber font-bold">
               Akshat Dikshit
             </span>{" "}
-            - Computer Science major with keen attention to detail,
-            concentrating on Machine Learning and problem-solving with data.
-            Skilled in Python and C++ programming languages.
+            - Computer Science major (CGPA: 8.4) and ML Intern at Jio Platforms.
+            Concentrating on Machine Learning, Full-Stack Development, and building
+            scalable, computing-intensive data pipelines.
           </div>
         );
 
@@ -102,17 +102,19 @@ const Terminal: React.FC = () => {
               </div>
               <div>
                 <span className="text-terminal-cyan font-bold">Host:</span>{" "}
-                Web-Terminal v1.0
+                Web-Terminal v2.0
               </div>
               <div>
                 <span className="text-terminal-cyan font-bold">Languages:</span>{" "}
-                Java, C++, Python, SQL, JS
+                Python, TypeScript, Java, C++, SQL
               </div>
               <div>
-                <span className="text-terminal-cyan font-bold">
-                  Frameworks:
-                </span>{" "}
-                OpenCV, MediaPipe, React, Node.js, Firebase
+                <span className="text-terminal-cyan font-bold">ML & Vision:</span>{" "}
+                OpenCV, MediaPipe, ONNX, YOLOv8, Scikit-learn
+              </div>
+              <div>
+                <span className="text-terminal-cyan font-bold">Stack:</span>{" "}
+                React, Next.js, FastAPI, Node.js, PostgreSQL, Docker
               </div>
             </div>
           </div>
@@ -121,13 +123,15 @@ const Terminal: React.FC = () => {
       case "ls":
         return (
           <div className="flex flex-col gap-1 mt-2 mb-4">
+            <div className="text-terminal-amber font-bold mb-1">./experience</div>
             <div>
               <span className="text-terminal-amber">1.</span>{" "}
-              <span className="text-terminal-cyan">motion-workspace.md</span>
+              <span className="text-terminal-cyan">jio-internship.log</span>
             </div>
+            <div className="text-terminal-amber font-bold mt-2 mb-1">./projects</div>
             <div>
               <span className="text-terminal-amber">2.</span>{" "}
-              <span className="text-terminal-cyan">digital-portrait.py</span>
+              <span className="text-terminal-cyan">project-tran.ts</span>
             </div>
             <div>
               <span className="text-terminal-amber">3.</span>{" "}
@@ -135,10 +139,10 @@ const Terminal: React.FC = () => {
             </div>
             <div>
               <span className="text-terminal-amber">4.</span>{" "}
-              <span className="text-terminal-cyan">onboard.java</span>
+              <span className="text-terminal-cyan">motion-workspace.tsx</span>
             </div>
             <div className="mt-2 text-xs opacity-50 italic">
-              Tip: Type the number or 'cat [name]' to view.
+              Tip: Type the number or 'cat [filename]' to view.
             </div>
           </div>
         );
@@ -157,42 +161,38 @@ const Terminal: React.FC = () => {
             : args[1];
 
         if (
-          target === "motion-workspace.md" ||
-          target === "motion-workspace" ||
+          target === "jio-internship.log" ||
+          target === "jio" ||
           target === "1"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
               <div className="text-terminal-amber font-bold mb-1">
-                Motion: Collaborative Workspace
+                Machine Learning Intern @ Jio Platforms Ltd. (Reliance Industries)
               </div>
-              <div>
-                Built a real-time editor with automated document recovery and
-                optimized Firebase synchronization to ensure zero-latency
-                concurrent editing.
-              </div>
-              <div className="mt-1 opacity-70 italic text-sm">
-                Stack: React, Node.js, Firebase, Google Auth.
-              </div>
+              <div className="text-sm opacity-80 mb-2">[Apr 2026 - Present | Gurugram, India]</div>
+              <ul className="list-disc ml-4 space-y-1">
+                <li>Engineered FaceTools: an async multi-container microservices suite of AI inference based on Docker containers running decoupled deep learning models with ONNX runtime, YOLOv8 tracking, and arcFace modules.</li>
+                <li>Built FaceVision data analysis engine to run DBSCAN clustering models across 512-dimensional vector embeddings utilizing PostgreSQL.</li>
+                <li>Deployed decentralized backend analytics microservices through an Nginx reverse proxy using GitHub Actions CI/CD workflows.</li>
+              </ul>
             </div>
           );
         } else if (
-          target === "digital-portrait.py" ||
-          target === "digital-portrait" ||
+          target === "project-tran.ts" ||
+          target === "project-tran" ||
           target === "2"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
               <div className="text-terminal-amber font-bold mb-1">
-                Automated Digital Portrait Pipeline
+                Project Tran: Transit Tracker
               </div>
               <div>
-                Engineered a CV pipeline using Delaunay triangulation and
-                Poisson blending for realistic face-template mapping,
-                implementing face-gating to eliminate artifacts.
+                Developed a full-stack transit tracking application utilizing Next.js to render synchronized route paths and live spatial updates via Google Maps APIs. Designed a normalized PostgreSQL database schema with Prisma ORM.
               </div>
-              <div className="mt-1 opacity-70 italic text-sm">
-                Stack: Python, OpenCV, MediaPipe, NumPy.
+              <div className="mt-2 opacity-70 italic text-sm">
+                Stack: Next.js, Supabase, Prisma, TypeScript, PostgreSQL.
               </div>
             </div>
           );
@@ -207,32 +207,28 @@ const Terminal: React.FC = () => {
                 Landslide Susceptibility Mapping
               </div>
               <div>
-                Developed a predictive ML model analyzing topographical data to
-                generate high-fidelity hazard heatmaps for disaster
-                preparedness.
+                Developed an end-to-end predictive geospatial ML pipeline combining landslide catalogs with Google Earth Engine spatial terrain data. Trained a balanced random forest architecture addressing severe class imbalance (Macro F1: 0.93).
               </div>
-              <div className="mt-1 opacity-70 italic text-sm">
-                Stack: Python, Scikit-learn, ML, NumPy.
+              <div className="mt-2 opacity-70 italic text-sm">
+                Stack: Python, Scikit-learn, Google Earth Engine, NumPy, SHAP.
               </div>
             </div>
           );
         } else if (
-          target === "onboard.java" ||
-          target === "onboard" ||
+          target === "motion-workspace.tsx" ||
+          target === "motion-workspace" ||
           target === "4"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
               <div className="text-terminal-amber font-bold mb-1">
-                OnBoard: Advertising Marketplace
+                Motion: Collaborative Workspace
               </div>
               <div>
-                Automated the advertising booking lifecycle from negotiation to
-                contract signing, integrating secure payments to improve
-                transaction efficiency.
+                Architectured a real-time collaborative document platform with low-latency Firebase sockets. Implemented debounced state handlers and an application connection layer to track active networks and prevent data loss.
               </div>
-              <div className="mt-1 opacity-70 italic text-sm">
-                Stack: Java, SQL, Full Stack, DBMS.
+              <div className="mt-2 opacity-70 italic text-sm">
+                Stack: React, Node.js, Firebase, Clerk Auth.
               </div>
             </div>
           );
@@ -263,6 +259,7 @@ const Terminal: React.FC = () => {
         return (
           <div className="mt-2 mb-4 opacity-70 font-mono text-sm">
             <div>[ 0.000000] Booting Nothing Phone (1) architecture...</div>
+            <div>[ 0.145021] Non-GKI 5.4 Kernel detected. Bypassing Wildkernel checks...</div>
             <div>[ 1.203451] Injecting KernelSU and APatch modules...</div>
             <div>
               [ 1.452912] SUSFS mounted successfully. Stealth mode enabled.
@@ -323,7 +320,7 @@ const Terminal: React.FC = () => {
     <div className="h-screen w-screen flex flex-col p-4 md:p-8 font-mono text-terminal-green overflow-hidden selection:bg-terminal-green selection:text-black">
       <div ref={terminalRef} className="flex-1 overflow-y-auto scroll-smooth">
         <div className="mb-4 text-terminal-amber opacity-60">
-          Welcome to Akshat-OS v1.0.0. Type 'help' to get started.
+          Welcome to Akshat-OS v2.0.0. Type 'help' to get started.
         </div>
 
         {history.map((item) => (
@@ -383,11 +380,11 @@ const ResumeDownloader: React.FC = () => {
   return (
     <div className="mt-2">
       <a
-        href="/Portfolio/RESUME.pdf"
-        download="Akshat_Resume.pdf"
+        href="/Portfolio/Akshat_Dikshit_Resume.pdf"
+        download="Akshat_Dikshit_Resume.pdf"
         className="text-terminal-cyan underline hover:text-terminal-green transition-colors font-bold"
       >
-        [Download Akshat_Resume.pdf]
+        [Download Akshat_Dikshit_Resume.pdf]
       </a>
     </div>
   );
