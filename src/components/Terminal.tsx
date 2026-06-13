@@ -73,9 +73,9 @@ const Terminal: React.FC = () => {
             <span className="text-terminal-amber font-bold">
               Akshat Dikshit
             </span>{" "}
-            - Computer Science major (CGPA: 8.4) and ML Intern at Jio Platforms.
-            Concentrating on Machine Learning, Full-Stack Development, and building
-            scalable, computing-intensive data pipelines.
+            - B.Tech Graduate in Computer Science from SRMIST (CPI: 8.4/10). 
+            Concentrating on Machine Learning, Full-Stack Development, and building 
+            scalable, computing-intensive AI inference and quantitative data pipelines.
           </div>
         );
 
@@ -102,19 +102,19 @@ const Terminal: React.FC = () => {
               </div>
               <div>
                 <span className="text-terminal-cyan font-bold">Host:</span>{" "}
-                Web-Terminal v2.0
+                Web-Terminal v3.0
               </div>
               <div>
                 <span className="text-terminal-cyan font-bold">Languages:</span>{" "}
-                Python, TypeScript, Java, C++, SQL
+                Python, Java, C++, JavaScript, TypeScript, SQL
               </div>
               <div>
                 <span className="text-terminal-cyan font-bold">ML & Vision:</span>{" "}
-                OpenCV, MediaPipe, ONNX, YOLOv8, Scikit-learn
+                Scikit-learn, OpenCV, ONNX, YOLOv8, LangGraph, MediaPipe
               </div>
               <div>
                 <span className="text-terminal-cyan font-bold">Stack:</span>{" "}
-                React, Next.js, FastAPI, Node.js, PostgreSQL, Docker
+                React, Next.js, FastAPI, Prisma, Supabase, Docker
               </div>
             </div>
           </div>
@@ -131,15 +131,24 @@ const Terminal: React.FC = () => {
             <div className="text-terminal-amber font-bold mt-2 mb-1">./projects</div>
             <div>
               <span className="text-terminal-amber">2.</span>{" "}
-              <span className="text-terminal-cyan">project-tran.ts</span>
+              <span className="text-terminal-cyan">smp-valuation-engine.py</span>
             </div>
             <div>
               <span className="text-terminal-amber">3.</span>{" "}
-              <span className="text-terminal-cyan">landslide-mapping.py</span>
+              <span className="text-terminal-cyan">project-tran.ts</span>
             </div>
             <div>
               <span className="text-terminal-amber">4.</span>{" "}
+              <span className="text-terminal-cyan">landslide-mapping.py</span>
+            </div>
+            <div>
+              <span className="text-terminal-amber">5.</span>{" "}
               <span className="text-terminal-cyan">motion-workspace.tsx</span>
+            </div>
+            <div className="text-terminal-amber font-bold mt-2 mb-1">./documents</div>
+            <div>
+              <span className="text-terminal-amber">6.</span>{" "}
+              <span className="text-terminal-cyan">certifications.txt</span>
             </div>
             <div className="mt-2 text-xs opacity-50 italic">
               Tip: Type the number or 'cat [filename]' to view.
@@ -151,12 +160,16 @@ const Terminal: React.FC = () => {
       case "2":
       case "3":
       case "4":
+      case "5":
+      case "6":
       case "cat": {
         const target =
           mainCmd === "1" ||
           mainCmd === "2" ||
           mainCmd === "3" ||
-          mainCmd === "4"
+          mainCmd === "4" ||
+          mainCmd === "5" ||
+          mainCmd === "6"
             ? mainCmd
             : args[1];
 
@@ -170,18 +183,36 @@ const Terminal: React.FC = () => {
               <div className="text-terminal-amber font-bold mb-1">
                 Machine Learning Intern @ Jio Platforms Ltd. (Reliance Industries)
               </div>
-              <div className="text-sm opacity-80 mb-2">[Apr 2026 - Present | Gurugram, India]</div>
+              <div className="text-sm opacity-80 mb-2">[Apr '26 - Jun '26]</div>
               <ul className="list-disc ml-4 space-y-1">
-                <li>Engineered FaceTools: an async multi-container microservices suite of AI inference based on Docker containers running decoupled deep learning models with ONNX runtime, YOLOv8 tracking, and arcFace modules.</li>
-                <li>Built FaceVision data analysis engine to run DBSCAN clustering models across 512-dimensional vector embeddings utilizing PostgreSQL.</li>
-                <li>Deployed decentralized backend analytics microservices through an Nginx reverse proxy using GitHub Actions CI/CD workflows.</li>
+                <li>Engineered FaceTools: an async multi-container microservices ecosystem driving decoupled deep learning model pipelines powered by ONNX Runtime, YOLOv8, and ArcFace using asyncio worker pools.</li>
+                <li>Designed Face Vision analytical core, executing distributed DBSCAN clustering over dense 512-dimensional vector embedding arrays with PostgreSQL.</li>
+                <li>Decentralized core analytics microservices across an enterprise-grade Nginx reverse proxy gateway communicating with a decoupled React frontend.</li>
               </ul>
+            </div>
+          );
+        } else if (
+          target === "smp-valuation-engine.py" ||
+          target === "smp" ||
+          target === "2"
+        ) {
+          return (
+            <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
+              <div className="text-terminal-amber font-bold mb-1">
+                SMP: Quantitative Equity Valuation Engine
+              </div>
+              <div>
+                Built a fully autonomous, institutional-grade equity valuation engine to aggregate and monitor real-time financial telemetry workflows. Architected a stateful financial pipeline via LangGraph cyclic architectures, computing automated DCF and CCA to generate presentation-ready investment memoranda.
+              </div>
+              <div className="mt-2 opacity-70 italic text-sm">
+                Stack: Python, LangGraph architectures, quantitative workflows.
+              </div>
             </div>
           );
         } else if (
           target === "project-tran.ts" ||
           target === "project-tran" ||
-          target === "2"
+          target === "3"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
@@ -189,17 +220,17 @@ const Terminal: React.FC = () => {
                 Project Tran: Transit Tracker
               </div>
               <div>
-                Developed a full-stack transit tracking application utilizing Next.js to render synchronized route paths and live spatial updates via Google Maps APIs. Designed a normalized PostgreSQL database schema with Prisma ORM.
+                Engineered a scalable transit tracker web application rendering synchronized spatial paths over Google Maps geometric APIs. Designed a highly normalized PostgreSQL relational database utilizing Prisma ORM with target B-tree query indexing.
               </div>
               <div className="mt-2 opacity-70 italic text-sm">
-                Stack: Next.js, Supabase, Prisma, TypeScript, PostgreSQL.
+                Stack: Next.js, Supabase Auth, Prisma, TypeScript, PostgreSQL.
               </div>
             </div>
           );
         } else if (
           target === "landslide-mapping.py" ||
           target === "landslide-mapping" ||
-          target === "3"
+          target === "4"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
@@ -207,7 +238,7 @@ const Terminal: React.FC = () => {
                 Landslide Susceptibility Mapping
               </div>
               <div>
-                Developed an end-to-end predictive geospatial ML pipeline combining landslide catalogs with Google Earth Engine spatial terrain data. Trained a balanced random forest architecture addressing severe class imbalance (Macro F1: 0.93).
+                Developed an end-to-end predictive geospatial ML architecture mapping hazard profiles. Ingested global landslide datasets with Google Earth Engine terrain arrays. Achieved a macro F1 score of 0.93 and a 0.663 AUC-ROC profile, leveraging SHAP explainability matrices.
               </div>
               <div className="mt-2 opacity-70 italic text-sm">
                 Stack: Python, Scikit-learn, Google Earth Engine, NumPy, SHAP.
@@ -217,7 +248,7 @@ const Terminal: React.FC = () => {
         } else if (
           target === "motion-workspace.tsx" ||
           target === "motion-workspace" ||
-          target === "4"
+          target === "5"
         ) {
           return (
             <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
@@ -225,17 +256,35 @@ const Terminal: React.FC = () => {
                 Motion: Collaborative Workspace
               </div>
               <div>
-                Architectured a real-time collaborative document platform with low-latency Firebase sockets. Implemented debounced state handlers and an application connection layer to track active networks and prevent data loss.
+                Architected a high-concurrency, real-time collaborative document workspace. Configured low-latency canvas operations via Firebase Realtime Database socket protocols and created custom client-side state caching layers to insulate against network dropouts.
               </div>
               <div className="mt-2 opacity-70 italic text-sm">
-                Stack: React, Node.js, Firebase, Clerk Auth.
+                Stack: React, Node.js, Firebase.
               </div>
+            </div>
+          );
+        } else if (
+          target === "certifications.txt" ||
+          target === "certifications" ||
+          target === "6"
+        ) {
+          return (
+            <div className="mt-2 mb-4 border-l-2 border-terminal-amber pl-4">
+              <div className="text-terminal-amber font-bold mb-1">
+                Certifications & Coursework
+              </div>
+              <ul className="list-disc ml-4 space-y-1">
+                <li>Investment Banking with Finance (LaunchED in partnership with IIT Roorkee)</li>
+                <li>Google Cloud Data Analytics (BigQuery, Looker Studio)</li>
+                <li>AWS Machine Learning Foundations (SageMaker, ML Workflows)</li>
+                <li>Cisco Networking Basics</li>
+              </ul>
             </div>
           );
         } else if (mainCmd === "cat" && !args[1]) {
           return (
             <div className="text-red-500 mt-2">
-              Usage: cat &lt;filename&gt; or just type the number.
+              Usage: cat &lt;filename&gt; or just type the file number.
             </div>
           );
         } else {
@@ -261,13 +310,8 @@ const Terminal: React.FC = () => {
             <div>[ 0.000000] Booting Nothing Phone (1) architecture...</div>
             <div>[ 0.145021] Non-GKI 5.4 Kernel detected. Bypassing Wildkernel checks...</div>
             <div>[ 1.203451] Injecting KernelSU and APatch modules...</div>
-            <div>
-              [ 1.452912] SUSFS mounted successfully. Stealth mode enabled.
-            </div>
-            <div>
-              [ 2.102344] Initializing crDroid / Evolution X custom
-              environment...
-            </div>
+            <div>[ 1.452912] SUSFS mounted successfully. Stealth mode enabled.</div>
+            <div>[ 2.102344] Initializing crDroid / Evolution X custom environment...</div>
           </div>
         );
 
@@ -320,7 +364,7 @@ const Terminal: React.FC = () => {
     <div className="h-screen w-screen flex flex-col p-4 md:p-8 font-mono text-terminal-green overflow-hidden selection:bg-terminal-green selection:text-black">
       <div ref={terminalRef} className="flex-1 overflow-y-auto scroll-smooth">
         <div className="mb-4 text-terminal-amber opacity-60">
-          Welcome to Akshat-OS v2.0.0. Type 'help' to get started.
+          Welcome to Akshat-OS v3.0.0. Type 'help' to get started.
         </div>
 
         {history.map((item) => (
